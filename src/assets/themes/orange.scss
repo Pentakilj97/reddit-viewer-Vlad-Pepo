@@ -1,0 +1,138 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$orange: (
+    50 : #ffe9e0,
+    100 : #ffc7b3,
+    200 : #ffa280,
+    300 : #ff7d4d,
+    400 : #ff6126,
+    500 : #ff4500,
+    600 : #ff3e00,
+    700 : #ff3600,
+    800 : #ff2e00,
+    900 : #ff1f00,
+    A100 : #ffffff,
+    A200 : #fff3f2,
+    A400 : #ffc4bf,
+    A700 : #ffaca6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$blue: (
+    50 : #e0e9f5,
+    100 : #b3c7e6,
+    200 : #80a2d6,
+    300 : #4d7dc5,
+    400 : #2661b8,
+    500 : #0045ac,
+    600 : #003ea5,
+    700 : #00369b,
+    800 : #002e92,
+    900 : #001f82,
+    A100 : #afbbff,
+    A200 : #7c90ff,
+    A400 : #4965ff,
+    A700 : #3050ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$red-palette: (
+    50 : #f9e0e0,
+    100 : #f0b3b3,
+    200 : #e68080,
+    300 : #db4d4d,
+    400 : #d42626,
+    500 : #cc0000,
+    600 : #c70000,
+    700 : #c00000,
+    800 : #b90000,
+    900 : #ad0000,
+    A100 : #ffd7d7,
+    A200 : #ffa4a4,
+    A400 : #ff7171,
+    A700 : #ff5858,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$my-primary-dark: mat.define-palette($blue, 500);
+$my-accent-dark: mat.define-palette($orange, 200, 100, 600);
+
+$my-primary-light: mat.define-palette($orange, 600);
+$my-accent-light: mat.define-palette($blue, 200);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette($red-palette, 500);
+
+$my-theme-dark: mat.define-dark-theme((
+ color: (
+   primary: $my-primary-dark,
+   accent: $my-accent-dark,
+   warn: $my-warn,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+$my-theme-light: mat.define-light-theme((
+ color: (
+   primary: $my-primary-light,
+   accent: $my-accent-light,
+   warn: $my-warn,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+@include mat.all-component-themes($my-theme-light);
+
+
+.dark-mode{
+  @include mat.all-component-themes($my-theme-dark);
+}
