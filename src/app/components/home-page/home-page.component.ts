@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Post } from 'src/app/model/post';
 import { RedditService } from 'src/app/services/reddit-service/reddit.service';
 
@@ -7,9 +7,9 @@ import { RedditService } from 'src/app/services/reddit-service/reddit.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent {
 
-  isLight = true;
+@Injectable()
+export class HomePageComponent {
 
   selectedArgument='all'
 
@@ -21,9 +21,10 @@ export class HomePageComponent {
     this.loadPosts()
   }
 
-  changeThemes(){
-    document.body.classList.toggle('dark-mode');
-    this.isLight = !this.isLight;
+
+  changeTheme(){
+    document.body.classList.toggle('dark-mode')
+    console.log(document.body.classList)
   }
 
   loadPosts(){

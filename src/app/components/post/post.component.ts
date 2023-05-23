@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HomePageComponent } from '../home-page/home-page.component';
+
 
 @Component({
   selector: 'app-post',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
+
+  get posts() {
+    return this.homePageComponent.posts;
+ }
+
+ constructor (private homePageComponent: HomePageComponent) {
+
+ }
+
 
 }

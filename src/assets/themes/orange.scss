@@ -101,8 +101,8 @@ $red-palette: (
     )
 );
 
-$my-primary-dark: mat.define-palette($blue, 500);
-$my-accent-dark: mat.define-palette($orange, 200, 100, 600);
+$my-primary-dark: mat.define-palette($orange, 500);
+$my-accent-dark: mat.define-palette($blue, 200, 100, 600);
 
 $my-primary-light: mat.define-palette($orange, 600);
 $my-accent-light: mat.define-palette($blue, 200);
