@@ -10,7 +10,7 @@ export class RedditService {
 
   constructor(private http: HttpClient) { }
   getRedditPosts(argument:string):Observable<Post[]>{
-    return this.http.get<any>('https://www.reddit.com/r/'+argument+'/hot.json?limit=100').pipe(
+    return this.http.get<any>('https://www.reddit.com/r/'+argument+'/hot.json?limit=50').pipe(
       // tap((obj)=>console.log("sono dentro il tap",obj)),
       map((obj)=>obj.data),
       // tap((data)=>console.log('sono dentro il secondo tap',data)),
