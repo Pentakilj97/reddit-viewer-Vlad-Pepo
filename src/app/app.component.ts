@@ -8,8 +8,12 @@ import { ApiCalls } from './services/api-calls.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+loadPosts() {
+throw new Error('Method not implemented.');
+}
   title = 'reddit-viewer';
   private url:string='https://www.reddit.com/r/worldnews.json'
+selectedArgument: any;
 
   constructor(private apiCalls: ApiCalls){
     apiCalls.getPosts()
