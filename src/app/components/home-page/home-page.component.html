@@ -1,11 +1,8 @@
-<mat-toolbar color='primary'>
-  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button> -->
+<mat-toolbar color='primary' class="toolbar">
   <span>Reddit Viewer</span>
   <span class="example-spacer"></span>
   <mat-form-field class="mat-form-field">
-    <mat-label>Choose Argument</mat-label>
+    <mat-label color="primary">Choose Argument</mat-label>
     <mat-select [(ngModel)]="selectedArgument" (ngModelChange)="loadPosts()">
       <mat-option value="all">All</mat-option>
       <mat-option value="art">Art</mat-option>
