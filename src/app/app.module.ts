@@ -15,6 +15,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import { PostComponent } from './components/post/post.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { RedditService } from './services/reddit-service/reddit.service';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatCardModule,
     MatPaginatorModule
   ],
-  providers: [],
+  providers: [HomePageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
