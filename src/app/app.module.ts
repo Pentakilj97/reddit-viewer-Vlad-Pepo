@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import { PostComponent } from './components/post/post.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PostComponent } from './components/post/post.component';
     MatSelectModule,
     FormsModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

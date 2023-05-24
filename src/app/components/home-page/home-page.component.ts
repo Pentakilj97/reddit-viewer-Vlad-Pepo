@@ -2,6 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { Post } from 'src/app/model/post';
 import { RedditService } from 'src/app/services/reddit-service/reddit.service';
 
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
