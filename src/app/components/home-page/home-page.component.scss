@@ -18,8 +18,17 @@
   height: 10vh;
 }
 
-.my-select-panel-class{
-background-color: #FF4500;
+.mat-select-panel {
+  background: #FF4500;
+  overflow-x: hidden;
 }
+
+input{
+  margin: 0px 12px;
+  height: 24px;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+}
+
 
 

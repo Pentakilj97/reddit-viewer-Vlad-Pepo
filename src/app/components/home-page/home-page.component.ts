@@ -13,7 +13,7 @@ export class HomePageComponent {
 
   selectedArgument='all'
 
-  pageSize = 25;
+  pageSize: number = 25;
 
   posts:Post[]=[];
 
@@ -23,7 +23,7 @@ export class HomePageComponent {
 
   changeTheme(){
     document.body.classList.toggle('dark-mode')
-    console.log(document.body.classList)
+    // console.log(document.body.classList)
   }
 
   loadPosts(){

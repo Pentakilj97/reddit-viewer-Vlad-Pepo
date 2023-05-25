@@ -9,7 +9,6 @@ import { Post } from 'src/app/model/post';
 })
 export class RedditService {
 
-  PAGE_LIMIT: number = 5;
 
   constructor(
     private http: HttpClient,
