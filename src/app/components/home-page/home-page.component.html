@@ -18,16 +18,19 @@
 
 <app-post></app-post>
 
-<mat-paginator [length]="100"
+<!-- <mat-paginator [length]="100"
               [pageSize]="10"
               [pageSizeOptions]="[5, 10, 25, 100]"
               aria-label="Select page">
 
-</mat-paginator>
-<mat-label color="primary">Choose number of pages</mat-label>
-<mat-select [(ngModel)]=pageSize (ngModelChange)="loadPosts()">
-  <mat-option value="5">5</mat-option>
-  <mat-option value="10">10</mat-option>
-</mat-select>
+</mat-paginator> -->
 
+<mat-form-field class="mat-form-field">
+<mat-label color="primary">{{pageSize}}</mat-label>
+<mat-select [(ngModel)]=pageSize (ngModelChange)="loadPosts()">
+  <mat-option value="50">50</mat-option>
+  <mat-option value="100">100</mat-option>
+  <input matInput [(ngModel)]=pageSize (ngModelChange)="loadPosts()" maxlength="3" placeholder="50" value="50">
+</mat-select>
+</mat-form-field>
 

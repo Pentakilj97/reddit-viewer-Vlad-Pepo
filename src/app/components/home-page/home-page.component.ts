@@ -13,7 +13,7 @@ export class HomePageComponent {
 
   selectedArgument='all'
 
-  pageSize = 6;
+  pageSize = 25;
 
   posts:Post[]=[];
 
@@ -32,5 +32,10 @@ export class HomePageComponent {
       error: err=> console.log(err)
     })
   }
+
+  getPage(){
+    console.log(this.pageSize)
+  }
+
 }
 
