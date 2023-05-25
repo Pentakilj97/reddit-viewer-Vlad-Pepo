@@ -2,7 +2,6 @@ import { Component, Injectable } from '@angular/core';
 import { Post } from 'src/app/model/post';
 import { RedditService } from 'src/app/services/reddit-service/reddit.service';
 
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -14,18 +13,12 @@ export class HomePageComponent {
 
   selectedArgument='all'
 
-  posts:Post[]=[];
+  pageSize = 6;
 
-  pageSize: number = 1;
+  posts:Post[]=[];
 
   constructor(private redditService: RedditService){
     this.loadPosts()
-    this.getPage()
-    redditService.PAGE_LIMIT = this.pageSize
-  }
-
-  getPage() {
-    console.log(this.pageSize)
   }
 
   changeTheme(){
@@ -34,7 +27,7 @@ export class HomePageComponent {
   }
 
   loadPosts(){
-    this.redditService.getRedditPosts(this.selectedArgument).subscribe({
+    this.redditService.getRedditPosts(this.selectedArgument, this.pageSize).subscribe({
       next:data=>this.posts=data,
       error: err=> console.log(err)
     })

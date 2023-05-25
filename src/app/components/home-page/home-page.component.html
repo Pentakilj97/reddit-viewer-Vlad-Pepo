@@ -25,9 +25,9 @@
 
 </mat-paginator>
 <mat-label color="primary">Choose number of pages</mat-label>
-<mat-select [(ngModel)]=pageSize (ngModelChange)="getPage()">
+<mat-select [(ngModel)]=pageSize (ngModelChange)="loadPosts()">
   <mat-option value="5">5</mat-option>
   <mat-option value="10">10</mat-option>
 </mat-select>
-<button (click)="getPage()"></button>
+
 

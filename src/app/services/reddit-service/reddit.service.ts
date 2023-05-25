@@ -18,13 +18,13 @@ export class RedditService {
     // this.PAGE_LIMIT = this.homePageComponent.pageSize;
   }
 
-  getRedditPosts(argument: string): Observable<Post[]> {
+  getRedditPosts(argument: string, pageSize: number): Observable<Post[]> {
     return this.http
       .get<any>(
         'https://www.reddit.com/r/' +
           argument +
           '/hot.json?limit=' +
-          this.PAGE_LIMIT
+          pageSize
       )
       .pipe(
         map((obj) => obj.data),
