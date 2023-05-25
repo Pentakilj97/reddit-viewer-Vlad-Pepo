@@ -11,19 +11,20 @@ export class RedditService {
 
 
   constructor(
-    private http: HttpClient,
-    // private homePageComponent: HomePageComponent
+    private http: HttpClient
   ) {
-    // this.PAGE_LIMIT = this.homePageComponent.pageSize;
+
   }
 
-  getRedditPosts(argument: string, pageSize: number): Observable<Post[]> {
+  getRedditPosts(argument: string, pageSize: number,  index: number): Observable<Post[]> {
     return this.http
       .get<any>(
         'https://www.reddit.com/r/' +
           argument +
-          '/hot.json?limit=' +
-          pageSize
+          '/hot.json?offset=' +
+          (pageSize * index) +
+          '&limit=' +
+          pageSize * index
       )
       .pipe(
         map((obj) => obj.data),
@@ -35,8 +36,9 @@ export class RedditService {
               if (child.data.url) {
                 return child.data;
               }
-            })
+            }),
           // tap((childrenData)=>console.log('sono dentro il quarto tap',childrenData)),
+          // window.scrollTo(0, 0),
         )
       );
   }

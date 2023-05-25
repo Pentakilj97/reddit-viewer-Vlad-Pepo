@@ -18,17 +18,24 @@
   height: 10vh;
 }
 
+.toolbar-footer{
+  height: 10vh;
+  margin: 0px;
+}
+
 .mat-select-panel {
   background: #FF4500;
   overflow-x: hidden;
 }
 
 input{
-  margin: 0px 12px;
+  margin: 0px 16px;
   height: 24px;
   font-size: 1rem;
   letter-spacing: 0.8px;
 }
 
-
+.mat-form-field-outline-start, .mat-form-field-outline-end {
+  border-radius: 0 !important;
+}
 

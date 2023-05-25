@@ -1,4 +1,4 @@
-<mat-toolbar color='primary' class="toolbar">
+<mat-toolbar color='primary' class="toolbar-footer">
   <span>Reddit Viewer</span>
   <span class="example-spacer"></span>
   <mat-form-field class="mat-form-field">
@@ -6,10 +6,9 @@
     <mat-select [(ngModel)]="selectedArgument" (ngModelChange)="loadPosts()">
       <mat-option value="all">All</mat-option>
       <mat-option value="art">Art</mat-option>
-      <mat-option value="worldnews">News</mat-option>
       <mat-option value="aww">Animals</mat-option>
       <mat-option value="memes">Memes</mat-option>
-      <input matInput [(ngModel)]="selectedArgument" (ngModelChange)="loadPosts()" placeholder="subreddit" value="all">
+      <input matInput [(ngModel)]="selectedArgument" (ngModelChange)="loadPosts()" placeholder="subreddit" value="all" style="width: 152px">
     </mat-select>
   </mat-form-field>
   <span class="example-spacer1"></span>
@@ -25,13 +24,18 @@
               (ngModelChange)="loadPosts()"
               aria-label="Select page">
 </mat-paginator> -->
-
-<mat-form-field class="mat-form-field">
-<mat-label color="primary">{{pageSize}}</mat-label>
+<mat-toolbar color='primary'>
+<button mat-button (click)="nextPage()">Load</button>
+<mat-form-field class="mat-form-field"  style="width: 90px">
+<!-- <mat-label color="primary">{{pageSize}}</mat-label> -->
 <mat-select [(ngModel)]=pageSize (ngModelChange)="loadPosts()">
-  <mat-option value="50">50</mat-option>
-  <mat-option value="100">100</mat-option>
-  <input matInput [(ngModel)]=pageSize (ngModelChange)="loadPosts()" maxlength="3" placeholder="50" value="50">
+  <mat-option value="5">5</mat-option>
+  <mat-option value="10">10</mat-option>
+  <input matInput [(ngModel)]=pageSize (ngModelChange)="loadPosts()" maxlength="3" placeholder="write a number" value="0" style="width: 50px;">
 </mat-select>
 </mat-form-field>
-
+<!-- <button mat-button (click)="previousPage()">Previous</button> -->
+<button mat-button (click)="nextPage()">...more posts</button>
+<span class="example-spacer"></span>
+<button mat-button (click)="backToTop()">Back to top</button>
+</mat-toolbar>

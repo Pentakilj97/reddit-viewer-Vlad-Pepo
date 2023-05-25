@@ -13,7 +13,11 @@ export class HomePageComponent {
 
   selectedArgument='all'
 
-  pageSize: number = 25;
+  pageSize: number = 5;
+
+  index: number = 1;
+
+  pageCount = this.pageSize * this.index;
 
   posts:Post[]=[];
 
@@ -23,18 +27,35 @@ export class HomePageComponent {
 
   changeTheme(){
     document.body.classList.toggle('dark-mode')
-    // console.log(document.body.classList)
   }
 
   loadPosts(){
-    this.redditService.getRedditPosts(this.selectedArgument, this.pageSize).subscribe({
+    this.redditService.getRedditPosts(this.selectedArgument, this.pageSize, this.index).subscribe({
       next:data=>this.posts=data,
       error: err=> console.log(err)
     })
   }
 
-  getPage(){
-    console.log(this.pageSize)
+  // previousPage(){
+  //   this.index -= 1;
+  //   this.redditService.getRedditPosts(this.selectedArgument, this.pageSize, this.index).subscribe({
+  //     next:data=>{this.posts = data
+  //         // ,window.scrollTo(0, 0)
+  //         },
+  //     error: err=> console.log(err)
+  //   })
+  // }
+
+  nextPage(){
+    this.index += 1;
+    this.redditService.getRedditPosts(this.selectedArgument, this.pageSize, this.index).subscribe({
+      next:data=>{this.posts=data,  console.log(this.index)},
+      error: err=> console.log(err)
+    })
+  }
+
+  backToTop() {
+    window.scrollTo(0, 0)
   }
 
 }
