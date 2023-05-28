@@ -7,4 +7,5 @@ export interface Post {
   selftext:string;
   thumbnail:string;
   post_hint: string;
+  media: any;
 }

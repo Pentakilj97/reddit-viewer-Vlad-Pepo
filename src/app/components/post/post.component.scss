@@ -22,6 +22,16 @@ img{
   white-space: normal;
 }
 
+video{
+  height: 40vh;
+  max-width: 86%;
+}
+
+.video-container{
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 992px) {
   .example-card {
     flex-grow: 1;
@@ -30,4 +40,9 @@ img{
     max-width: none;
    overflow: hidden;
    }
+
+   video{
+    height: none;
+    width: 88vw;
+  }
 }

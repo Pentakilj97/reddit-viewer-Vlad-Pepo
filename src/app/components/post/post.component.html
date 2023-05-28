@@ -1,31 +1,31 @@
 <div class="container">
-  <div *ngFor="let post of posts" >
-  <mat-card  class="example-card" *ngIf="post.post_hint === 'image'">
-    <mat-card-header>
-      <mat-card-title class="title">{{post.title}}</mat-card-title>
-      <mat-card-subtitle>{{post.author}}</mat-card-subtitle>
-    </mat-card-header>
+  <div *ngFor="let post of posts">
+    <mat-card class="example-card" *ngIf="post.post_hint === 'image'">
+      <mat-card-header>
+        <mat-card-title class="title">{{post.title}}</mat-card-title>
+        <mat-card-subtitle>{{post.author}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <a href="{{post.url}}" target="_blank">
+          <img mat-card-image src="{{post.url}}" alt="thumbnail">
+        </a>
+      </mat-card-content>
+    </mat-card>
 
-    <mat-card-content >
-      <a href="{{post.url}}" target="_blank">
-        <img mat-card-image src="{{post.url}}" alt="thumbnail">
-        <!-- <img mat-card-image src="{{post.thumbnail}}" alt="thumbnail"> -->
+    <mat-card class="example-card" *ngIf="post.media">
+      <mat-card-header>
+        <mat-card-title class="title">{{post.title}}</mat-card-title>
+        <mat-card-subtitle>{{post.author}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <a href="{{post.url}}" target="_blank" class="video-container">
+          <video id="video-post" class="post-image" mat-card-image *ngIf="post.media!=null" controls loop>
+            <source src="{{post.media.reddit_video?.fallback_url}}" type="video/mp4">
+          </video>
 
-      </a>
-    </mat-card-content>
-  </mat-card>
-  <mat-card  class="example-card" *ngIf="post.post_hint === 'rich:video'">
-    <mat-card-header>
-      <mat-card-title class="title">{{post.title}}</mat-card-title>
-      <mat-card-subtitle>{{post.author}}</mat-card-subtitle>
-    </mat-card-header>
+        </a>
+      </mat-card-content>
+    </mat-card>
+  </div>
 
-    <mat-card-content >
-      <a href="{{post.url}}" target="_blank">
-     <video src="{{post.url}}" poster="{{post.thumbnail}}"></video>
-        <iframe width="356" height="200" [src]="post.url + '?feature=oembed&amp;enablejsapi=1' | safe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="{{post.title}}"></iframe>
-      </a>
-    </mat-card-content>
-  </mat-card>
-</div>
-</div>
+  </div>
