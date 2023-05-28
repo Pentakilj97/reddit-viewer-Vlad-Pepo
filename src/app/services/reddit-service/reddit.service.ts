@@ -33,6 +33,7 @@ export class RedditService {
           (children) =>
             children.map((child: any) => {
               if (child.data.post_hint === 'image' || child.data.url) {
+                console.log(child.data)
                 return child.data;
               }
             }),

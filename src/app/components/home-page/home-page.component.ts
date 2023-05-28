@@ -32,7 +32,7 @@ export class HomePageComponent {
   loadPosts(){
     // this.posts.filter(post => (post.post_hint === 'hosted:video' || post.post_hint === 'image'))
     this.redditService.getRedditPosts(this.selectedArgument, this.pageSize, this.index).subscribe({
-      next:data=>this.posts=data,
+      next:data=>{this.posts=data},
       error: err=> console.log(err)
     })
   }
@@ -40,7 +40,7 @@ export class HomePageComponent {
   loadPostsNewSub(){
     this.pageSize = 10;
     this.redditService.getRedditPosts(this.selectedArgument, this.pageSize, this.index).subscribe({
-      next:data=>this.posts=data,
+      next:data=>{this.posts=data},
       error: err=> console.log(err)
     })
   }

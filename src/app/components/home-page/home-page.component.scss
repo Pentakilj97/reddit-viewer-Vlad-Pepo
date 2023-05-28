@@ -2,6 +2,11 @@
   flex: 1 1 auto;
 }
 
+html, body{
+  margin: 0px;
+  padding: 0px;
+}
+
 .example-spacer1 {
   flex: 0.05 0.05 auto;
 }

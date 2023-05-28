@@ -19,7 +19,7 @@
       </mat-card-header>
       <mat-card-content>
         <a href="{{post.url}}" target="_blank" class="video-container">
-          <video id="video-post" class="post-image" mat-card-image *ngIf="post.media!=null" controls loop>
+          <video poster="{{post.thumbnail}}" id="video-post" class="post-image" mat-card-image *ngIf="post.media!=null" controls loop>
             <source src="{{post.media.reddit_video?.fallback_url}}" type="video/mp4">
           </video>
 
