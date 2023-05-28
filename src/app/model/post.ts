@@ -6,4 +6,6 @@ export interface Post {
   author:string;
   selftext:string;
   thumbnail:string;
+  post_hint: string;
+  media: any;
 }

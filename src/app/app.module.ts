@@ -12,8 +12,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { PostComponent } from './components/post/post.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { RedditService } from './services/reddit-service/reddit.service';
 
 
 @NgModule({
@@ -33,9 +35,10 @@ import { PostComponent } from './components/post/post.component';
     MatSelectModule,
     FormsModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
-  providers: [],
+  providers: [HomePageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

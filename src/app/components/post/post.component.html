@@ -1,21 +1,31 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Actions Buttons</mat-card-title>
-    <mat-card-subtitle>Start</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
-<br>
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Actions Buttons</mat-card-title>
-    <mat-card-subtitle>End</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-actions align="end">
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="container">
+  <div *ngFor="let post of posts">
+    <mat-card class="example-card" *ngIf="post.post_hint === 'image'">
+      <mat-card-header>
+        <mat-card-title class="title">{{post.title}}</mat-card-title>
+        <mat-card-subtitle>{{post.author}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <a href="{{post.url}}" target="_blank">
+          <img mat-card-image src="{{post.url}}" alt="thumbnail">
+        </a>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card" *ngIf="post.media">
+      <mat-card-header>
+        <mat-card-title class="title">{{post.title}}</mat-card-title>
+        <mat-card-subtitle>{{post.author}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <a href="{{post.url}}" target="_blank" class="video-container">
+          <video id="video-post" class="post-image" mat-card-image *ngIf="post.media!=null" controls loop>
+            <source src="{{post.media.reddit_video?.fallback_url}}" type="video/mp4">
+          </video>
+
+        </a>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  </div>

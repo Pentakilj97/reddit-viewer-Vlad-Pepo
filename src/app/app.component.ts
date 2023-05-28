@@ -24,9 +24,6 @@ selectedArgument: any;
     .then(console.log)
   }
 
-  changeTheme(){
-    document.body.classList.toggle('dark-mode')
-    console.log(document.body.classList)
-  }
+
 
 }
