@@ -28,14 +28,15 @@
 <button mat-button (click)="nextPage()">Load</button>
 <mat-form-field class="mat-form-field"  style="width: 90px">
 <!-- <mat-label color="primary">{{pageSize}}</mat-label> -->
-<mat-select [(ngModel)]=pageSize (ngModelChange)="loadPosts()">
+<mat-label for="">{{pageSize}}</mat-label>
+<mat-select  (ngModelChange)="loadPosts()">
   <mat-option value="5">5</mat-option>
   <mat-option value="10">10</mat-option>
   <input matInput [(ngModel)]=pageSize (ngModelChange)="loadPosts()" maxlength="3" placeholder="write a number" value="0" style="width: 50px;">
 </mat-select>
 </mat-form-field>
 <!-- <button mat-button (click)="previousPage()">Previous</button> -->
-<button mat-button (click)="nextPage()">...more posts</button>
+<button mat-button (click)="nextPage()"> more posts</button>
 <span class="example-spacer"></span>
 <button mat-button (click)="backToTop()">Back to top</button>
 </mat-toolbar>
